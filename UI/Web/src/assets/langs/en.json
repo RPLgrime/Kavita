@@ -208,7 +208,8 @@
         "theme-darker": "Darker",
         "theme-black": "Black",
         "theme-paper": "Paper",
-        "theme-white": "White"
+        "theme-white": "White",
+        "theme-custom": "Custom"
     },
 
     "restriction-selector": {
@@ -932,7 +933,8 @@
         "theme-darker": "Darker",
         "theme-black": "Black",
         "theme-white": "White",
-        "theme-paper": "Paper"
+        "theme-paper": "Paper",
+        "theme-custom": "Custom"
     },
 
     "table-of-contents": {

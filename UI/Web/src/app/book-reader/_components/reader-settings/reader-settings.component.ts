@@ -25,9 +25,23 @@ import { BookDarkTheme } from '../../_models/book-dark-theme';
 import { BookDarkerTheme } from '../../_models/book-darker-theme';
 import { BookWhiteTheme } from '../../_models/book-white-theme';
 import { BookPaperTheme } from '../../_models/book-paper-theme';
+import { BookCustomTheme } from '../../_models/book-custom-theme';
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import { NgbAccordionDirective, NgbAccordionItem, NgbAccordionHeader, NgbAccordionToggle, NgbAccordionButton, NgbCollapse, NgbAccordionCollapse, NgbAccordionBody, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import {TranslocoDirective} from "@ngneat/transloco";
+import { ColorSelectorComponent } from 'src/app/color-selector/color-selector.component';
+
+@Component({
+  selector: 'app-parent',
+  templateUrl: './parent.component.html',
+  styleUrls: ['./parent.component.css'],
+  imports: [ColorSelectorComponent] // Import the standalone component here
+})
+export class ParentComponent {
+  handleColorChange(color: string) {
+    console.log('Selected color:', color);
+  }
+}
 
 /**
  * Used for book reader. Do not use for other components
@@ -90,6 +104,16 @@ export const bookColorThemes = [
     selector: 'brtheme-paper',
     content: BookPaperTheme,
     translationKey: 'theme-paper'
+  },
+  {
+    name: 'Custom',
+    colorHash: 'red',
+    isDarkTheme: false,
+    isDefault: false,
+    provider: ThemeProvider.System,
+    selector: 'brtheme-custom',
+    content: BookCustomTheme,
+    translationKey: 'theme-custom'
   },
 ];
 

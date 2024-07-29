@@ -162,6 +162,11 @@
                   </button>
                 </ng-container>
               </div>
+              <div class="color-selector">
+                <label for="colorPicker">{{t('select-color')}}</label>
+                <app-color-selector (colorChange)="handleColorChange($event)"></app-color-selector>
+                <!--<input type="color" id="colorPicker" [(ngModel)]="selectedColor" (change)="onColorChange($event)" />-->
+              </div>
             </ng-template>
           </div>
         </div>
